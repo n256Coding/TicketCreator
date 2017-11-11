@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.WriterException;
 
 import androidmads.library.qrgenearator.QRGContents;
@@ -68,6 +69,10 @@ public class Main2Activity extends AppCompatActivity {
         } catch (WriterException e) {
             Log.v("Test", e.toString());
         }
+    }
+
+    public void testFirebase(View view){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
     }
 
 }
