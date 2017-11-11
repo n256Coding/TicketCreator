@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TicketCreator</string>
+    <string name="personal_info">Personal Information</string>
+</resources>
