@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">TicketCreator</string>
     <string name="personal_info">Personal Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="nic_number">NIC Number</string>
+    <string name="select_travel_card">Pick a travel card</string>
+    <string name="btnNext">Next</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
