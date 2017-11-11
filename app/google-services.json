@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "871309660130",
+    "firebase_url": "https://ticket-creator.firebaseio.com",
+    "project_id": "ticket-creator",
+    "storage_bucket": "ticket-creator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871309660130:android:4b093ffd1121456c",
+        "android_client_info": {
+          "package_name": "com.csse.ticketcreator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871309660130-7rk5i57vrs3h42fa31s139dn54mh4ciq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKbrBiMstvxMAA4_gmW2NCEO5NpAiFyAs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
