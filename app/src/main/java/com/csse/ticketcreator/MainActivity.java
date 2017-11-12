@@ -16,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
 
         btnNext = (Button) findViewById(R.id.btnNext);
     }
-
+//    go to the second activity
     public void doStuff(View view){
         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
+
     }
 }
