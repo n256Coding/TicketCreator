@@ -51,16 +51,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+//    go to the second activity
     public void doStuff(View view){
-        Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
-        String[] steps = {"step 1", "Step2", "Step 3", "Step 4", "Step 5"};
-        stepsView.setLabels(steps)
-                .setBarColorIndicator(MainActivity.this.getResources().getColor(R.color.material_blue_grey_800))
-                .setProgressColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
-                .setLabelColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
-                .setCompletedPosition(0)
-                .drawView();
     }
 }
