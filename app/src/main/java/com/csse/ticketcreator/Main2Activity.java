@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,9 +14,19 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.csse.ticketcreator.Models.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.WriterException;
+
+import java.util.Date;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
@@ -45,7 +56,17 @@ public class Main2Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+                DatabaseReference userRef = database.child("users");
+                DatabaseReference newUserRef = userRef.push();
+                User user = new User("Michal", "Knight", "0745652548", "6584585426526");
+                newUserRef.setValue(user);
+                Toast.makeText(Main2Activity.this, "Data Added", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void viewQrCode(View view){
@@ -73,6 +94,11 @@ public class Main2Activity extends AppCompatActivity {
 
     public void testFirebase(View view){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference mDatabase = database.getReference();
+        User user = new User("Michal", "Knight", "0745652548", "6584585426526");
+        mDatabase.child("users").child(String.valueOf(new Date().getTime())).setValue(user);
     }
+
+
 
 }

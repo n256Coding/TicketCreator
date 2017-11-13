@@ -31,8 +31,12 @@ dependencies {
     compile 'com.google.firebase:firebase-core:11.6.0'
     compile 'com.google.firebase:firebase-database:11.6.0'
     compile 'com.google.firebase:firebase-storage:11.6.0'
-
+    compile 'com.google.firebase:firebase-auth:11.6.0'
+    compile 'com.anton46:stepsview:0.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
 }
+
+
 
 apply plugin: 'com.google.gms.google-services'
