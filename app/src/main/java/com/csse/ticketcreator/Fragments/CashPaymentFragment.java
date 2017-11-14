@@ -12,15 +12,14 @@ import android.widget.Button;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 import com.csse.ticketcreator.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PaymentMethodFragment extends Fragment {
+public class CashPaymentFragment extends Fragment {
     OnNextClickListener activityCallback;
-    Button btnPaymentMethodNext;
+    Button btnCashNext;
 
-    public PaymentMethodFragment() {
+    public CashPaymentFragment() {
         // Required empty public constructor
     }
 
@@ -29,7 +28,7 @@ public class PaymentMethodFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_payment_method, container, false);
+        return inflater.inflate(R.layout.fragment_cash_payment, container, false);
     }
 
     @Override
@@ -37,13 +36,6 @@ public class PaymentMethodFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         activityCallback = (OnNextClickListener) getContext();
-        btnPaymentMethodNext = (Button) getView().findViewById(R.id.btnPaymentMethodNext);
-
-        btnPaymentMethodNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                activityCallback.onStep3NextClick();
-            }
-        });
+        btnCashNext = (Button) getView().findViewById(R.id.btnCashNext);
     }
 }

@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/chkCash" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnPaymentMethodNext"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="123dp"
         android:layout_height="60dp"
