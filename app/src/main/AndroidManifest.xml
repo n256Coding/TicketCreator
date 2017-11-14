@@ -30,15 +30,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".Main3Activity"
-            android:label="@string/title_activity_main3"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.csse.ticketcreator.MainActivity" />
-        </activity>
     </application>
 
 </manifest>

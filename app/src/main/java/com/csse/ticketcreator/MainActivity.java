@@ -42,18 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 .setLabelColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
                 .setCompletedPosition(0)
                 .drawView();
-        stepsView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StepsView stepsView1 = (StepsView) view;
-                Toast.makeText(MainActivity.this, "Clicked"+stepsView1.getCompletedPosition(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
     public void doStuff(View view){
-        Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
         String[] steps = {"step 1", "Step2", "Step 3", "Step 4", "Step 5"};
         stepsView.setLabels(steps)
