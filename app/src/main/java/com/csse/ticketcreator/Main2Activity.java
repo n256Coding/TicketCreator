@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,13 +16,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.csse.ticketcreator.Models.User;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.WriterException;
 
 import java.util.Date;
@@ -65,6 +59,7 @@ public class Main2Activity extends AppCompatActivity {
                 User user = new User("Michal", "Knight", "0745652548", "6584585426526");
                 newUserRef.setValue(user);
                 Toast.makeText(Main2Activity.this, "Data Added", Toast.LENGTH_SHORT).show();
+                viewQrCode(view);
             }
         });
     }
