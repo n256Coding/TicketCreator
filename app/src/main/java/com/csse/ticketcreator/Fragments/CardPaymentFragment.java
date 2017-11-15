@@ -36,7 +36,7 @@ public class CardPaymentFragment extends Fragment {
         btnCardNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activityCallback.onStep5NextClick();
+                activityCallback.jumpToStep(5);
             }
         });
     }

@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnCard250"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -32,13 +32,13 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/imageButton3"
+            app:layout_constraintLeft_toRightOf="@+id/btnCard500"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+            app:layout_constraintTop_toBottomOf="@+id/btnCard750"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnCard500"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -49,12 +49,12 @@
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/imageButton4"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            app:layout_constraintRight_toLeftOf="@+id/btnCard250"
+            app:layout_constraintTop_toBottomOf="@+id/btnCard1000"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnCard750"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -63,14 +63,14 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-            app:layout_constraintLeft_toRightOf="@+id/imageButton"
+            app:layout_constraintBottom_toTopOf="@+id/btnCard250"
+            app:layout_constraintLeft_toRightOf="@+id/btnCard1000"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnCard1000"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -79,9 +79,9 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+            app:layout_constraintBottom_toTopOf="@+id/btnCard500"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/imageButton2"
+            app:layout_constraintRight_toLeftOf="@+id/btnCard750"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher" />
     </android.support.constraint.ConstraintLayout>

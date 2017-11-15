@@ -4,6 +4,7 @@ package com.csse.ticketcreator.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +12,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.csse.ticketcreator.Controllers.UserController;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
+import com.csse.ticketcreator.Models.User;
 import com.csse.ticketcreator.R;
 
 
 public class PersonalInfoFragment extends Fragment {
     Button btnPersonInfoNext;
-    OnNextClickListener activityCallback;
+    EditText txtFname, txtLname, txtContactNo, txtNicNo;
+
+    OnNextClickListener nextClickListener;
+    UserController userController;
     String TAG = "PersonalInfoFragment";
 
 
@@ -38,8 +44,18 @@ public class PersonalInfoFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         try {
-            activityCallback = (OnNextClickListener) getContext();
+            nextClickListener = (OnNextClickListener) getContext();
             btnPersonInfoNext = (Button) getView().findViewById(R.id.btnPickCardNext);
+            txtFname = (EditText) getView().findViewById(R.id.txtFname);
+            txtLname = (EditText) getView().findViewById(R.id.txtLname);
+            txtContactNo = (EditText) getView().findViewById(R.id.txtContactNo);
+            txtNicNo = (EditText) getView().findViewById(R.id.txtNicNo);
+
+            txtFname.setError("Please enter your first name");
+            txtLname.setError("Please enter your last name");
+            txtContactNo.setError("Please enter your contact number");
+            txtNicNo.setError("Please enter your NIC number");
+
         } catch (ClassCastException ex) {
             Log.e(TAG, "Personal info fragment next button", ex);
         } catch (NullPointerException ex) {
@@ -49,8 +65,25 @@ public class PersonalInfoFragment extends Fragment {
         btnPersonInfoNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                User user = new User(txtFname.getText().toString().trim(),
+                        txtLname.getText().toString().trim(),
+                        txtContactNo.getText().toString().trim(),
+                        txtNicNo.getText().toString().trim());
+                userController = UserController.getInstance();
 
-                activityCallback.onStep1NextClick();
+                if (userController.checkUserValidity(user)) {
+                    userController.setUser(user);
+                    nextClickListener.jumpToStep(2);
+                }
+                else
+                {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Incorrect user info")
+                            .setMessage("Please enter correct user information")
+                            .setCancelable(true)
+                            .setPositiveButton("OK", null)
+                            .show();
+                }
             }
         });
     }

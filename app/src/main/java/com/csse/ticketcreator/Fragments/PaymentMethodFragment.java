@@ -4,10 +4,12 @@ package com.csse.ticketcreator.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 import com.csse.ticketcreator.R;
@@ -17,8 +19,9 @@ import com.csse.ticketcreator.R;
  * A simple {@link Fragment} subclass.
  */
 public class PaymentMethodFragment extends Fragment {
-    OnNextClickListener activityCallback;
+    OnNextClickListener nextClickListener;
     Button btnPaymentMethodNext;
+    RadioButton rbCash, rbCreditCard;
 
     public PaymentMethodFragment() {
         // Required empty public constructor
@@ -36,13 +39,29 @@ public class PaymentMethodFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        activityCallback = (OnNextClickListener) getContext();
+        nextClickListener = (OnNextClickListener) getContext();
         btnPaymentMethodNext = (Button) getView().findViewById(R.id.btnPaymentMethodNext);
+        rbCash = (RadioButton) getView().findViewById(R.id.rbCash);
+        rbCreditCard = (RadioButton) getView().findViewById(R.id.rbCard);
+
 
         btnPaymentMethodNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activityCallback.onStep3NextClick();
+                if(rbCash.isChecked()){
+                    nextClickListener.jumpToStep(4);
+                }
+                else if(rbCreditCard.isChecked()){
+                    nextClickListener.jumpToStep(5);
+                }
+                else {
+                    new AlertDialog.Builder(getContext())
+                            .setCancelable(true)
+                            .setTitle("No Option Selected")
+                            .setMessage("Please select your preferred way to make payment")
+                            .setNeutralButton("OK", null)
+                            .show();
+                }
             }
         });
     }

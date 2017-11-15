@@ -31,7 +31,7 @@ public class FragmentHandler {
                 fragmentTransaction.replace(R.id.fragment_container, new PersonalInfoFragment());
                 break;
             case 2:
-                fragmentTransaction.replace(R.id.fragment_container, PickCardFragment.getInstance());
+                fragmentTransaction.replace(R.id.fragment_container, new PickCardFragment());
                 break;
             case 3:
                 fragmentTransaction.replace(R.id.fragment_container, new PaymentMethodFragment());
@@ -46,7 +46,7 @@ public class FragmentHandler {
                 fragmentTransaction.replace(R.id.fragment_container, new SuccesfullPaymentFragment());
                 break;
             default:
-                fragmentTransaction.replace(R.id.fragment_container, PickCardFragment.getInstance());
+                fragmentTransaction.replace(R.id.fragment_container, new PickCardFragment());
                 break;
         }
         fragmentTransaction.commit();
@@ -59,7 +59,7 @@ public class FragmentHandler {
                 fragmentTransaction.add(R.id.fragment_container, new PersonalInfoFragment());
                 break;
             case 2:
-                fragmentTransaction.add(R.id.fragment_container, PickCardFragment.getInstance());
+                fragmentTransaction.add(R.id.fragment_container, new PickCardFragment());
                 break;
             case 3:
                 fragmentTransaction.add(R.id.fragment_container, new PaymentMethodFragment());
@@ -74,7 +74,7 @@ public class FragmentHandler {
                 fragmentTransaction.add(R.id.fragment_container, new SuccesfullPaymentFragment());
                 break;
             default:
-                fragmentTransaction.add(R.id.fragment_container, PickCardFragment.getInstance());
+                fragmentTransaction.add(R.id.fragment_container, new PickCardFragment());
                 break;
         }
         fragmentTransaction.commit();

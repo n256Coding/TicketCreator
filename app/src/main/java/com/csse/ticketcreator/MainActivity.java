@@ -50,34 +50,12 @@ public class MainActivity extends AppCompatActivity
                 .drawView();
     }
 
-    public void changeFragmentTo(int step) {
+    @Override
+    public void jumpToStep(int step) {
         fragmentHandler.replaceFragment(step);
+        if(step == 5)
+            step--;
         stepsView.setCompletedPosition(step - 1)
                 .drawView();
-    }
-
-    @Override
-    public void onStep1NextClick() {
-        changeFragmentTo(2);
-    }
-
-    @Override
-    public void onStep2NextClick() {
-        changeFragmentTo(3);
-    }
-
-    @Override
-    public void onStep3NextClick() {
-        changeFragmentTo(4);
-    }
-
-    @Override
-    public void onStep4NextClick() {
-        changeFragmentTo(5);
-    }
-
-    @Override
-    public void onStep5NextClick() {
-        changeFragmentTo(6);
     }
 }
