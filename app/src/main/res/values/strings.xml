@@ -30,7 +30,7 @@
     <string name="pay_with_cash_title">Pay with Cash</string>
     <string name="your_amount">Your Amount</string>
     <string name="service_fee">Service Fee</string>
-    <string name="amount_to_pay">- Amount to be paid</string>
+    <string name="amount_to_pay">Amount to be paid</string>
     <string name="cash_note1">- In order to pay, please insert the banknote to the cash deposit slot.</string>
     <string name="cash_note2">- If you want to pay more, please insert the next banknote.</string>
     <string name="cash_note3">- Insert notes one by one.</string>

@@ -39,8 +39,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="135dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView6" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/txtServiceCharge" />
 
     <TextView
         android:id="@+id/textView8"
@@ -59,8 +60,8 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-        app:layout_constraintRight_toRightOf="@+id/txtAmount"
-        android:layout_marginRight="-1dp" />
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/txtFullAmount" />
 
     <TextView
         android:id="@+id/textView10"
@@ -74,15 +75,13 @@
         android:layout_marginStart="8dp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/txtFullAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
         android:text="TextView"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
-        app:layout_constraintRight_toRightOf="@+id/txtServiceCharge"
-        android:layout_marginRight="-1dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView10"
-        android:layout_marginLeft="8dp" />
+        app:layout_constraintLeft_toRightOf="@+id/textView10" />
 
     <Space
         android:layout_width="0dp"

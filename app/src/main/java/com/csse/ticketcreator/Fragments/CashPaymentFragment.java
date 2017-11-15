@@ -8,16 +8,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.csse.ticketcreator.Controllers.AccountController;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 import com.csse.ticketcreator.R;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CashPaymentFragment extends Fragment {
     OnNextClickListener nextClickListener;
+    AccountController accountController;
     Button btnCashNext;
+    TextView txtAmount, txtServiceCharge, txtFullAmount;
 
     public CashPaymentFragment() {
         // Required empty public constructor
@@ -37,10 +43,19 @@ public class CashPaymentFragment extends Fragment {
 
         nextClickListener = (OnNextClickListener) getContext();
         btnCashNext = (Button) getView().findViewById(R.id.btnCashNext);
+        txtAmount = (TextView) getView().findViewById(R.id.txtAmount);
+        txtServiceCharge = (TextView) getView().findViewById(R.id.txtServiceCharge);
+        txtFullAmount = (TextView) getView().findViewById(R.id.txtFullAmount);
+        accountController = AccountController.getInstance();
+
+        txtAmount.setText(String.valueOf(accountController.getAccount().getAmount()));
+        txtServiceCharge.setText(String.valueOf(accountController.getCashServiceCharge()));
+        txtFullAmount.setText(String.valueOf(accountController.getTotalCharge()));
 
         btnCashNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 nextClickListener.jumpToStep(6);
             }
         });

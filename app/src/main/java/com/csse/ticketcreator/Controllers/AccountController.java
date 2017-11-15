@@ -50,6 +50,10 @@ public class AccountController {
         return account.getTotalCharge();
     }
 
+    public double getCashServiceCharge(){
+        return account.getCashServiceCharge();
+    }
+
     public void setPaymentType(String type){
         account.setPaymentType(type);
     }
