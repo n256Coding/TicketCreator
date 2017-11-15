@@ -6,5 +6,5 @@ package com.csse.ticketcreator.Interfaces;
  */
 
 public interface BankSystem {
-    public boolean validateCardInfo(String cardNumber);
+    public boolean validateCardInfo(String holderName, String cardNumber, String expiryDate, String ccv);
 }

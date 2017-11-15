@@ -53,8 +53,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void jumpToStep(int step) {
         fragmentHandler.replaceFragment(step);
-        if(step == 5)
-            step--;
+
+        //To handle IndexOutOfBoundException
+        switch (step){
+            case 5: step--; break;
+            case 6: step--; break;
+        }
         stepsView.setCompletedPosition(step - 1)
                 .drawView();
     }

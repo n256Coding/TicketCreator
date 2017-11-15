@@ -68,7 +68,7 @@ public class PickCardFragment extends Fragment {
         btnPickCardNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(accountController.getAccount().amount >= 250){
+                if(accountController.getAccount().getAmount() >= 250){
                     nextClickListener.jumpToStep(3);
                 }
                 else{
@@ -85,7 +85,7 @@ public class PickCardFragment extends Fragment {
         btnCard250.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                accountController.getAccount().amount = 250;
+                accountController.getAccount().setAmount(250);
                 btnCard250.setBackgroundColor(Color.GREEN);
                 btnCard500.setBackgroundColor(Color.LTGRAY);
                 btnCard750.setBackgroundColor(Color.LTGRAY);
@@ -96,7 +96,7 @@ public class PickCardFragment extends Fragment {
         btnCard500.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                accountController.getAccount().amount = 500;
+                accountController.getAccount().setAmount(500);
                 btnCard250.setBackgroundColor(Color.LTGRAY);
                 btnCard500.setBackgroundColor(Color.GREEN);
                 btnCard750.setBackgroundColor(Color.LTGRAY);
@@ -107,7 +107,7 @@ public class PickCardFragment extends Fragment {
         btnCard750.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                accountController.getAccount().amount = 750;
+                accountController.getAccount().setAmount(750);
                 btnCard250.setBackgroundColor(Color.LTGRAY);
                 btnCard500.setBackgroundColor(Color.LTGRAY);
                 btnCard750.setBackgroundColor(Color.GREEN);
@@ -118,7 +118,7 @@ public class PickCardFragment extends Fragment {
         btnCard1000.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                accountController.getAccount().amount = 1000;
+                accountController.getAccount().setAmount(1000);
                 btnCard250.setBackgroundColor(Color.LTGRAY);
                 btnCard500.setBackgroundColor(Color.LTGRAY);
                 btnCard750.setBackgroundColor(Color.LTGRAY);

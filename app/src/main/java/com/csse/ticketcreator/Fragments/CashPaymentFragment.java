@@ -16,7 +16,7 @@ import com.csse.ticketcreator.R;
  * A simple {@link Fragment} subclass.
  */
 public class CashPaymentFragment extends Fragment {
-    OnNextClickListener activityCallback;
+    OnNextClickListener nextClickListener;
     Button btnCashNext;
 
     public CashPaymentFragment() {
@@ -35,7 +35,14 @@ public class CashPaymentFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        activityCallback = (OnNextClickListener) getContext();
+        nextClickListener = (OnNextClickListener) getContext();
         btnCashNext = (Button) getView().findViewById(R.id.btnCashNext);
+
+        btnCashNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextClickListener.jumpToStep(6);
+            }
+        });
     }
 }

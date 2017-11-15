@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 
+import com.csse.ticketcreator.Controllers.AccountController;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 import com.csse.ticketcreator.R;
 
@@ -20,6 +21,7 @@ import com.csse.ticketcreator.R;
  */
 public class PaymentMethodFragment extends Fragment {
     OnNextClickListener nextClickListener;
+    AccountController accountController;
     Button btnPaymentMethodNext;
     RadioButton rbCash, rbCreditCard;
 
@@ -44,14 +46,17 @@ public class PaymentMethodFragment extends Fragment {
         rbCash = (RadioButton) getView().findViewById(R.id.rbCash);
         rbCreditCard = (RadioButton) getView().findViewById(R.id.rbCard);
 
+        accountController = AccountController.getInstance();
 
         btnPaymentMethodNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbCash.isChecked()){
+                    accountController.setPaymentType("cash");
                     nextClickListener.jumpToStep(4);
                 }
                 else if(rbCreditCard.isChecked()){
+                    accountController.setPaymentType("card");
                     nextClickListener.jumpToStep(5);
                 }
                 else {

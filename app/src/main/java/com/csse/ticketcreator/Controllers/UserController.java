@@ -22,7 +22,7 @@ public class UserController {
 
     public boolean checkUserValidity(User user){
         NationalSystem nationalSystem = new NationalSystemImpl();
-        return nationalSystem.validateUser(user.firstName, user.lastName, user.nicNo);
+        return nationalSystem.validateUser(user.getFirstName(), user.getLastName(), user.getNicNo());
     }
 
     public void setUser(User user){

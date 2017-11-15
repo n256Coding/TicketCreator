@@ -14,11 +14,9 @@ import androidmads.library.qrgenearator.QRGEncoder;
 
 public class QRGenerator {
     public static Bitmap getQRCodeBitmap(String content, int dimension) throws WriterException {
-        Bitmap bitmap;
-        // Initializing the QR Encoder with your value to be encoded, type required and Dimension
+        // Initializing the QR Encoder with value to be encoded, type required and Dimension
         QRGEncoder qrgEncoder = new QRGEncoder(content, null, QRGContents.Type.TEXT, dimension);
         // Getting QR-Code as Bitmap
-        bitmap = qrgEncoder.encodeAsBitmap();
-        return bitmap;
+        return qrgEncoder.encodeAsBitmap();
     }
 }

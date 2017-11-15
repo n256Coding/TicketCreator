@@ -1,4 +1,8 @@
 <resources>
+    <!-- Home Screen -->
+    <string name="home_title">Travel Ticketing System</string>
+    <string name="home_note1">Choose a task you want</string>
+
     <string name="app_name">Ticket Creator</string>
     <string name="personal_info">Personal Information</string>
     <string name="first_name">First Name</string>
@@ -33,8 +37,12 @@
     <string name="cash_note4">- No cash back, No change.</string>
     <string name="cash_note5">- LKR 20, 50, 100, 500, 1000, 2000, 5000 banknotes are accepted.</string>
 
-    <string name="payment_compleate">Payment Completed</string>
+    <!-- Payment successful -->
+    <string name="payment_complete">Successful Purchase!</string>
     <string name="button_finish">Finish</string>
-
+    <string name="date">Date</string>
+    <string name="details">Details</string>
+    <string name="transaction_number">Transaction Number</string>
+    <string name="order_total">Order Total</string>
 
 </resources>
