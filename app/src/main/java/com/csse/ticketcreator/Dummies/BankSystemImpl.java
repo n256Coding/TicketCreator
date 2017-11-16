@@ -15,4 +15,9 @@ public class BankSystemImpl implements BankSystem {
             return true;
         }
     }
+
+    @Override
+    public boolean makeTransaction(String cardNumber, String ccv, String expiryDate) {
+        return true;
+    }
 }

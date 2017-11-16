@@ -4,6 +4,8 @@ package com.csse.ticketcreator.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import org.w3c.dom.Text;
  * A simple {@link Fragment} subclass.
  */
 public class CashPaymentFragment extends Fragment {
+    private static final String TAG = "CashPaymentFrag";
     OnNextClickListener nextClickListener;
     AccountController accountController;
     Button btnCashNext;
@@ -55,8 +58,19 @@ public class CashPaymentFragment extends Fragment {
         btnCashNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(accountController.makeAccount()){
+                    nextClickListener.jumpToStep(6);
+                }
+                else{
+                    Log.e(TAG, "Error saving data to firebase");
 
-                nextClickListener.jumpToStep(6);
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("Transaction Error")
+                            .setMessage("Transaction could not completed, Account not created.\nTry Again")
+                            .setCancelable(true)
+                            .setNeutralButton("OK", null)
+                            .show();
+                }
             }
         });
     }
