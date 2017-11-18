@@ -54,9 +54,9 @@ public class CardPaymentFragment extends Fragment {
                 account.setCcv(txtCcv.getText().toString().trim());
 
                 if (accountController.checkCardDetails(account.getCardHolderName(), account.getCardNumber(),
-                        account.getExpiryDate(), account.getCcv())) {
+                        account.getExpiryDate(), account.getCcv()).equals("success")) {
                     accountController.setAccount(account);
-                    if(!accountController.makeAccount()){
+                    if(accountController.makeAccount()){
                         //This is custom listener to communicate with main activity of this fragment
                         nextClickListener.jumpToStep(6);
                     }
