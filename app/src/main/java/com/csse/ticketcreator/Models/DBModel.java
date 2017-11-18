@@ -1,53 +1,81 @@
 package com.csse.ticketcreator.Models;
 
 /**
- * Created by Nishan on 11/15/2017.
+ * @author Nishan
+ * @version 1.5
  */
 
 public class DBModel {
-    private String first_name;
-    private String last_name;
-    private String contact_number;
-    private String nic_number;
-    private double amount;
+    private String Fname;
+    private String Lname;
+    private String ContactNo;
+    private String NIC;
+    private double Amount;
+    private double Loan = 0;
+    private String LoanFlag = "false";
+    private String RideFlag = "false";
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFname() {
+        return Fname;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFname(String fname) {
+        this.Fname = fname;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLname() {
+        return Lname;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLname(String lname) {
+        this.Lname = lname;
     }
 
-    public String getContact_number() {
-        return contact_number;
+    public String getContactNo() {
+        return ContactNo;
     }
 
-    public void setContact_number(String contact_number) {
-        this.contact_number = contact_number;
+    public void setContactNo(String contactNo) {
+        this.ContactNo = contactNo;
     }
 
-    public String getNic_number() {
-        return nic_number;
+    public String getNIC() {
+        return NIC;
     }
 
-    public void setNic_number(String nic_number) {
-        this.nic_number = nic_number;
+    public void setNIC(String NIC) {
+        this.NIC = NIC;
     }
 
     public double getAmount() {
-        return amount;
+        return Amount;
     }
 
     public void setAmount(double amount) {
-        this.amount = amount;
+        this.Amount = amount;
+    }
+
+    public double getLoan() {
+        return Loan;
+    }
+
+    public void setLoan(double loan) {
+        Loan = loan;
+    }
+
+    public String getLoanFlag() {
+        return LoanFlag;
+    }
+
+    public void setLoanFlag(String loanFlag) {
+        LoanFlag = loanFlag;
+    }
+
+    public String getRideFlag() {
+        return RideFlag;
+    }
+
+    public void setRideFlag(String rideFlag) {
+        RideFlag = rideFlag;
     }
 }

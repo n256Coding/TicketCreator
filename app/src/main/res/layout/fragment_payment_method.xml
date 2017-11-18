@@ -56,7 +56,7 @@
         android:layout_width="123dp"
         android:layout_height="60dp"
         android:layout_marginRight="7dp"
-        android:text="@string/btnNext"
+        android:text="@string/btn_next"
         android:textSize="30sp"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="513dp" />

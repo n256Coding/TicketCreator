@@ -2,8 +2,6 @@ package com.csse.ticketcreator.Models;
 
 import com.csse.ticketcreator.Helpers.DatabaseHelper;
 
-import java.util.HashMap;
-
 /**
  * @author Nishan
  * @version 2.0
@@ -43,14 +41,14 @@ public class Account {
     public String createAccount(User user) {
         DBModel dbModel = new DBModel();
         dbModel.setAmount(amount);
-        dbModel.setFirst_name(user.getFirstName());
-        dbModel.setLast_name(user.getLastName());
-        dbModel.setContact_number(user.getContactNo());
-        dbModel.setNic_number(user.getNicNo());
+        dbModel.setFname(user.getFirstName());
+        dbModel.setLname(user.getLastName());
+        dbModel.setContactNo(user.getContactNo());
+        dbModel.setNIC(user.getNicNo());
 
-        DatabaseHelper databaseHelper = new DatabaseHelper();
-        databaseHelper.addToDatabase(dbModel);
-        return databaseHelper.getGeneratedKey();
+        DatabaseHelper database = new DatabaseHelper();
+        database.insertUser(dbModel);
+        return database.getCardId();
     }
 
     public double getAmount() {

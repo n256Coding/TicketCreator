@@ -105,7 +105,7 @@
         android:layout_height="80dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="24dp"
-        android:text="@string/btnNext"
+        android:text="@string/btn_next"
         android:textSize="24sp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCcv" />

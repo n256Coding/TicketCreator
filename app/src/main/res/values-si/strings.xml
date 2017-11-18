@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ticket Creator</string>
+    <!-- Home Screen -->
+    <string name="home_title">ගමන් ටිකට්පත් ලබාගැනීමේ පද්ධතිය</string>
+    <string name="home_note1">ඔබට අවශ්‍ය දෙය තෝරන්න</string>
+
+    <string name="app_name">ටිකට්පත් සකසනය</string>
+    <string name="personal_info">පුද්ගලික තොරතුරු</string>
+    <string name="fname">මුල් නම</string>
+    <string name="lname">අවසාන නම</string>
+    <string name="contactNo">දුරකථන අංකය</string>
+    <string name="NIC">ජා.හැ. අංකය</string>
+    <string name="select_travel_card">කාඩ්පතක් තෝරාගන්න</string>
+    <string name="btn_next">ඉදිරියට</string>
+    <string name="btn_back">අාපසු</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="action_settings">සැකසුම්</string>
+    <string name="payment_method">ගෙවීමේ ක්‍රමය</string>
+    <string name="payment_method_cash">මුදල් මගින්</string>
+    <string name="payment_method_credit">ණය කාඩ්පත් මගින්</string>
+
+    <!-- Pay with Card -->
+    <string name="card_title">කාඩ්පත අැතුල් කරන්න</string>
+    <string name="card_holder_name">අයිතිකරුගේ නම</string>
+    <string name="card_number">කාඩ්පත් අංකය</string>
+    <string name="expiry">කල් ඉකුත්වීම</string>
+    <string name="expiry_date_format">MM/YYYY</string>
+    <string name="ccv">CCV</string>
+
+    <!-- Pay with Cash -->
+    <string name="pay_with_cash_title">මුදල් මගින් ගෙවීම</string>
+    <string name="your_amount">ගාස්තුව</string>
+    <string name="service_fee">සේවා ගාස්තු</string>
+    <string name="amount_to_pay">ගෙවීමට අැති මුලු මුදල</string>
+    <string name="cash_note1">- මුදල් ගෙවීමට මුදල් නෝට්ටු යන්ත්‍රයට අැතුල් කරන්න.</string>
+    <string name="cash_note2">- තවදුරටත් මුදල් ගෙවීමට අැත්නම්, තව මුදල් නෝට්ටු අැතුල් කරන්න.</string>
+    <string name="cash_note3">- මුදල් නෝට්ටු ඒකින් ඒක අැතුල් කරන්න.</string>
+    <string name="cash_note4">- මුදල් අාපසු ගැනීම හෝ මාරු කිරීම සිදු නොකරයි.</string>
+    <string name="cash_note5">- රුපියල් 20, 50, 100, 500, 1000, 2000, 5000 නෝට්ටු බාරගනු ලැබේ.</string>
+
+    <!-- Payment successful -->
+    <string name="payment_complete">ගෙවීම සම්පූර්ණයි!</string>
+    <string name="button_finish">අවසන් කරන්න</string>
+    <string name="date">දිනය</string>
+    <string name="details">විස්තර</string>
+    <string name="transaction_number">ගණුදෙණු අංකය</string>
+    <string name="order_total">ගෙවූ මුදල</string>
 </resources>

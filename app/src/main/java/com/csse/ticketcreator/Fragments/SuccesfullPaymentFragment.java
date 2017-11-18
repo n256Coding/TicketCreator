@@ -63,5 +63,7 @@ public class SuccesfullPaymentFragment extends Fragment {
         txtTransactionDetails.setText(userController.getUser().getFirstName());
         txtTransactionNumber.setText(accountController.getTransactionId());
         txtOrderTotal.setText(String.valueOf(accountController.getTotalCharge()));
+
+        //TODO: Need to implement function for button - Account.clearInstance()
     }
 }

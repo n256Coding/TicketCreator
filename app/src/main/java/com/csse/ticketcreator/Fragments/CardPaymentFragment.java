@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ public class CardPaymentFragment extends Fragment {
     AccountController accountController;
     Button btnCardNext, btnCardBack;
     EditText txtCardHolder, txtCardNumber, txtExpiryDate, txtCcv;
+    //For use of logger
+    private static final String TAG = "CardPaymentFrag";
 
     public CardPaymentFragment() {
         // Required empty public constructor
@@ -36,9 +39,14 @@ public class CardPaymentFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        nextClickListener = (OnNextClickListener) getContext();
+        try{
+            nextClickListener = (OnNextClickListener) getContext();
+        }catch (ClassCastException ex){
+            Log.e(TAG, "Unable to get context of activity", ex);
+        }
+
         btnCardNext = (Button) getView().findViewById(R.id.btnCardNext);
-        btnCardBack = (Button) getView().findViewById(R.id.btnCashBack);
+        btnCardBack = (Button) getView().findViewById(R.id.btnCardBack);
         txtCardHolder = (EditText) getView().findViewById(R.id.txtCardHolder);
         txtCardNumber = (EditText) getView().findViewById(R.id.txtCardNumber);
         txtExpiryDate = (EditText) getView().findViewById(R.id.txtExpiryDate);

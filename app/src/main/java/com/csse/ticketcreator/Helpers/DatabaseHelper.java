@@ -27,15 +27,14 @@ public class DatabaseHelper {
         return temporaryReference;
     }
 
-    public DatabaseReference addToDatabase(DBModel dbModel){
+    public DatabaseReference insertUser(DBModel dbModel){
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference userRef = database.child("users");
-        DatabaseReference newUserRef = userRef.push();
-        newUserRef.setValue(dbModel);
-        return temporaryReference = newUserRef;
+        DatabaseReference userRef = database.child("Users").child(dbModel.getNIC());
+        userRef.setValue(dbModel);
+        return temporaryReference = userRef;
     }
 
-    public String getGeneratedKey(){
+    public String getCardId(){
         return temporaryReference.getKey();
     }
 }
