@@ -6,6 +6,12 @@
     tools:context="com.csse.ticketcreator.Fragments.PaymentMethodFragment">
 
 
+    <Button
+        android:id="@+id/btnPaymentMethodBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="139dp"

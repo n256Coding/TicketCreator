@@ -25,7 +25,7 @@ public class CashPaymentFragment extends Fragment {
     private static final String TAG = "CashPaymentFrag";
     OnNextClickListener nextClickListener;
     AccountController accountController;
-    Button btnCashNext;
+    Button btnCashNext, btnCashBack;
     TextView txtAmount, txtServiceCharge, txtFullAmount;
 
     public CashPaymentFragment() {
@@ -46,6 +46,7 @@ public class CashPaymentFragment extends Fragment {
 
         nextClickListener = (OnNextClickListener) getContext();
         btnCashNext = (Button) getView().findViewById(R.id.btnCashNext);
+        btnCashBack = (Button) getView().findViewById(R.id.btnCashBack);
         txtAmount = (TextView) getView().findViewById(R.id.txtAmount);
         txtServiceCharge = (TextView) getView().findViewById(R.id.txtServiceCharge);
         txtFullAmount = (TextView) getView().findViewById(R.id.txtFullAmount);
@@ -71,6 +72,13 @@ public class CashPaymentFragment extends Fragment {
                             .setNeutralButton("OK", null)
                             .show();
                 }
+            }
+        });
+
+        btnCashBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextClickListener.jumpToStep(3);
             }
         });
     }

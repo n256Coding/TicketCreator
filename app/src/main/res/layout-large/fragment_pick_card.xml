@@ -115,4 +115,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+        android:id="@+id/btnPickCardBack"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/btn_back"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnPickCardNext"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

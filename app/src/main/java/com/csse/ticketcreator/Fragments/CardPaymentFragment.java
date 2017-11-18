@@ -18,7 +18,7 @@ import com.csse.ticketcreator.R;
 public class CardPaymentFragment extends Fragment {
     OnNextClickListener nextClickListener;
     AccountController accountController;
-    Button btnCardNext;
+    Button btnCardNext, btnCardBack;
     EditText txtCardHolder, txtCardNumber, txtExpiryDate, txtCcv;
 
     public CardPaymentFragment() {
@@ -38,6 +38,7 @@ public class CardPaymentFragment extends Fragment {
 
         nextClickListener = (OnNextClickListener) getContext();
         btnCardNext = (Button) getView().findViewById(R.id.btnCardNext);
+        btnCardBack = (Button) getView().findViewById(R.id.btnCashBack);
         txtCardHolder = (EditText) getView().findViewById(R.id.txtCardHolder);
         txtCardNumber = (EditText) getView().findViewById(R.id.txtCardNumber);
         txtExpiryDate = (EditText) getView().findViewById(R.id.txtExpiryDate);
@@ -70,6 +71,13 @@ public class CardPaymentFragment extends Fragment {
                             .setNeutralButton("OK", null)
                             .show();
                 }
+            }
+        });
+
+        btnCardBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextClickListener.jumpToStep(3);
             }
         });
     }

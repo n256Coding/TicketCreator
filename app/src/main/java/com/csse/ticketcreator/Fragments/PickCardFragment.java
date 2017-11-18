@@ -24,7 +24,7 @@ import com.csse.ticketcreator.R;
  */
 public class PickCardFragment extends Fragment {
     private OnNextClickListener nextClickListener;
-    Button btnPickCardNext;
+    Button btnPickCardNext, btnPickCardBack;
     ImageButton btnCard1000, btnCard750, btnCard500, btnCard250;
     AccountController accountController;
 
@@ -53,6 +53,7 @@ public class PickCardFragment extends Fragment {
         try {
             nextClickListener = (OnNextClickListener) getContext();
             btnPickCardNext = (Button) getView().findViewById(R.id.btnPickCardNext);
+            btnPickCardBack = (Button) getView().findViewById(R.id.btnPickCardBack);
             btnCard250 = (ImageButton) getView().findViewById(R.id.btnCard250);
             btnCard500 = (ImageButton) getView().findViewById(R.id.btnCard500);
             btnCard750 = (ImageButton) getView().findViewById(R.id.btnCard750);
@@ -79,6 +80,13 @@ public class PickCardFragment extends Fragment {
                             .setNeutralButton("OK", null)
                             .show();
                 }
+            }
+        });
+
+        btnPickCardBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextClickListener.jumpToStep(1);
             }
         });
 
