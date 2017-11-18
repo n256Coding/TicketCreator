@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.csse.ticketcreator.Fragments.CardPaymentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/textView7"
