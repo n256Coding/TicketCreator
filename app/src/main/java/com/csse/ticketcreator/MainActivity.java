@@ -1,59 +1,65 @@
 package com.csse.ticketcreator;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.anton46.stepsview.StepsView;
+import com.csse.ticketcreator.Controllers.FragmentHandler;
+import com.csse.ticketcreator.Listeners.OnNextClickListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements OnNextClickListener {
     Button btnNext;
     StepsView stepsView;
-    Fragment fragment;
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
+    FragmentHandler fragmentHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnNext = (Button) findViewById(R.id.btnNext);
+        btnNext = (Button) findViewById(R.id.btnPickCardNext);
         stepsView = (StepsView) findViewById(R.id.stepsView);
 
-        fragmentManager = getSupportFragmentManager();
-        //fragmentTransaction = fragmentManager.beginTransaction();
-        /*fragment = PersonalInfoFragment.newInstance("", "");
+        fragmentHandler = new FragmentHandler(getSupportFragmentManager());
 
-        fragmentTransaction.add(R.id.placeholderFragment, fragment);
-        fragmentTransaction.commit();*/
+        //Load initial fragment into activity
+        fragmentHandler.addFragment(1);
 
-        String[] steps = {"step 1", "Step2", "Step 3", "Step 4", "Step 5"};
+        String[] steps = {"Step 1", "Step 2", "Step 3", "Step 4", "Step 5"};
         stepsView.setLabels(steps)
                 .setBarColorIndicator(MainActivity.this.getResources().getColor(R.color.material_blue_grey_800))
                 .setProgressColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
                 .setLabelColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
                 .setCompletedPosition(0)
                 .drawView();
-        stepsView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StepsView stepsView1 = (StepsView) view;
-                Toast.makeText(MainActivity.this, "Clicked"+stepsView1.getCompletedPosition(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
-//    go to the second activity
-    public void doStuff(View view){
+
+    public void doStuff(View view) {
         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
+        String[] steps = {"Step 1", "Step 2", "Step 3", "Step 4", "Step 5"};
+        stepsView.setLabels(steps)
+                .setBarColorIndicator(MainActivity.this.getResources().getColor(R.color.material_blue_grey_800))
+                .setProgressColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
+                .setLabelColorIndicator(MainActivity.this.getResources().getColor(R.color.orange))
+                .setCompletedPosition(0)
+                .drawView();
+    }
+
+    @Override
+    public void jumpToStep(int step) {
+        fragmentHandler.replaceFragment(step);
+
+        //To handle IndexOutOfBoundException
+        switch (step){
+            case 5: step--; break;
+            case 6: step--; break;
+        }
+        stepsView.setCompletedPosition(step - 1)
+                .drawView();
     }
 }
