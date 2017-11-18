@@ -22,7 +22,7 @@ import com.csse.ticketcreator.R;
 public class PaymentMethodFragment extends Fragment {
     OnNextClickListener nextClickListener;
     AccountController accountController;
-    Button btnPaymentMethodNext;
+    Button btnPaymentMethodNext, btnPaymentMethodBack;
     RadioButton rbCash, rbCreditCard;
 
     public PaymentMethodFragment() {
@@ -43,6 +43,7 @@ public class PaymentMethodFragment extends Fragment {
 
         nextClickListener = (OnNextClickListener) getContext();
         btnPaymentMethodNext = (Button) getView().findViewById(R.id.btnPaymentMethodNext);
+        btnPaymentMethodBack = (Button) getView().findViewById(R.id.btnPaymentMethodBack);
         rbCash = (RadioButton) getView().findViewById(R.id.rbCash);
         rbCreditCard = (RadioButton) getView().findViewById(R.id.rbCard);
 
@@ -67,6 +68,13 @@ public class PaymentMethodFragment extends Fragment {
                             .setNeutralButton("OK", null)
                             .show();
                 }
+            }
+        });
+
+        btnPaymentMethodBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextClickListener.jumpToStep(2);
             }
         });
     }
