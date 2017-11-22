@@ -2,6 +2,8 @@
     <!-- Home Screen -->
     <string name="home_title">Travel Ticketing System</string>
     <string name="home_note1">Choose a task you want</string>
+    <string name="btn_name1">New Ticket</string>
+
 
     <string name="app_name">Ticket Creator</string>
     <string name="personal_info">Personal Information</string>
@@ -10,7 +12,7 @@
     <string name="contact_number">Contact Number</string>
     <string name="nic_number">NIC Number</string>
     <string name="select_travel_card">Pick a travel card</string>
-    <string name="btnNext">Next</string>
+    <string name="btn_next">Next</string>
     <string name="btn_back">Back</string>
     <string name="title_activity_main2">Main2Activity</string>
 
@@ -45,5 +47,6 @@
     <string name="details">Details</string>
     <string name="transaction_number">Transaction Number</string>
     <string name="order_total">Order Total</string>
+    <string name="top_up">Top Up</string>
 
 </resources>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1_1"
     tools:context="com.csse.ticketcreator.Fragments.CardPaymentFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,11 +11,13 @@
     <Button
         android:id="@+id/btnCardBack"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
         android:text="@string/btn_back"
         android:textSize="24sp"
         android:layout_marginLeft="8dp"
+        android:background="@drawable/btn_next_style"
+        android:drawableLeft="@drawable/ic_navigate_before_white_18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnCardNext" />
 
@@ -30,6 +33,7 @@
         android:text="@string/card_title"
         android:textSize="60sp"
         android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -101,12 +105,14 @@
     <Button
         android:id="@+id/btnCardNext"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/btnNext"
+        android:layout_marginTop="80dp"
+        android:text="@string/btn_next"
         android:textSize="24sp"
+        android:background="@drawable/btn_next_style"
+        android:drawableRight="@drawable/ic_navigate_next_white_18dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCcv" />
 
