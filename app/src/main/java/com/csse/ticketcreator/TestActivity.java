@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 
+/**
+ * This activity is to use in test cases.
+ * All fragments are loaded into this activity for test successful loading of fragments
+ */
 public class TestActivity extends AppCompatActivity implements OnNextClickListener{
 
     @Override

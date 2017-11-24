@@ -1,25 +1,24 @@
 package com.csse.ticketcreator;
 
-import android.*;
-import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Toast;
 
 import com.csse.ticketcreator.Controllers.AccountController;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
-
-import java.util.Scanner;
 
 import me.dm7.barcodescanner.zbar.Result;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
-public class ScannerActivity extends AppCompatActivity implements ZBarScannerView.ResultHandler{
+/**
+ * @author Sampath
+ * @version 1.2
+ */
+public class ScannerActivity extends AppCompatActivity implements ZBarScannerView.ResultHandler {
     ZBarScannerView scannerView;
 
     @Override
@@ -56,21 +55,27 @@ public class ScannerActivity extends AppCompatActivity implements ZBarScannerVie
     @Override
     public void handleResult(Result result) {
         AccountController accountController = AccountController.getInstance();
-        if(result.getContents() != null){
+        if (result.getContents() != null) {
             //if(accountController.checkAccountAvailability(result.getContents())){
-            if(true){
+            if (true) {
                 Intent intent = new Intent(ScannerActivity.this, TopupActivity.class);
                 intent.putExtra("travelCardId", result.getContents());
                 startActivity(intent);
-            }
-            else{
+            } else {
                 //TODO: make alert dialog to show account id not found
                 finish();
             }
-        }
-        else{
-            //TODO: make alert dialog to show no content found
-            finish();
+        } else {
+            new AlertDialog.Builder(ScannerActivity.this)
+                    .setCancelable(false)
+                    .setTitle("No content found")
+                    .setMessage("Please scan correct code")
+                    .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    });
         }
     }
 
