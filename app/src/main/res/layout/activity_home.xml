@@ -2,22 +2,48 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background3_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.csse.ticketcreator.HomeActivity">
 
-    <ImageButton
+    <Button
         android:id="@+id/btnNewCard"
-        android:layout_width="180dp"
-        android:layout_height="97dp"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="Create a new ticket."
+        android:layout_marginTop="150dp"
+        android:background="@drawable/button_style"
+        android:drawableLeft="@drawable/ic_credit_card_white_18dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="casual"
+        android:text="@string/btn_new_card"
+        android:textColor="#ffffff"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/btnTopup"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_style2"
+        android:drawableLeft="@drawable/ic_account_balance_wallet_white_18dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="casual"
+        android:text="@string/btn_topup_card"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewCard"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView17"
@@ -26,9 +52,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
         android:text="@string/home_title"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,22 +69,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="32dp"
+        android:fontFamily="serif"
+        android:gravity="center"
         android:text="@string/home_note1"
+        android:textSize="25dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.0" />
-
-    <ImageButton
-        android:id="@+id/btnTopup"
-        android:layout_width="180dp"
-        android:layout_height="97dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnNewCard"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+        tools:ignore="SpUsage" />
 
 </android.support.constraint.ConstraintLayout>

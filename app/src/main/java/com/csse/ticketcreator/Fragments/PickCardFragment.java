@@ -1,7 +1,6 @@
 package com.csse.ticketcreator.Fragments;
 
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,8 +18,10 @@ import com.csse.ticketcreator.R;
 
 
 /**
- * @version 1.0
+ * This is the fragment which show travel cards to pick
+ *
  * @author Nishan
+ * @version 1.0
  */
 public class PickCardFragment extends Fragment {
     private OnNextClickListener nextClickListener;
@@ -69,10 +70,9 @@ public class PickCardFragment extends Fragment {
         btnPickCardNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(accountController.getTravelCard().getAmount() >= 250){
+                if (accountController.getTravelCard().getAmount() >= 250) {
                     nextClickListener.jumpToStep(3);
-                }
-                else{
+                } else {
                     new AlertDialog.Builder(getContext())
                             .setCancelable(true)
                             .setTitle("No Card Selected")
@@ -90,47 +90,52 @@ public class PickCardFragment extends Fragment {
             }
         });
 
+
         btnCard250.setOnClickListener(new View.OnClickListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onClick(View view) {
                 accountController.getTravelCard().setAmount(250);
-                btnCard250.setBackgroundColor(Color.GREEN);
-                btnCard500.setBackgroundColor(Color.LTGRAY);
-                btnCard750.setBackgroundColor(Color.LTGRAY);
-                btnCard1000.setBackgroundColor(Color.LTGRAY);
+                btnCard250.setBackground(getResources().getDrawable(R.drawable.card1_1_sel));
+                btnCard500.setBackground(getResources().getDrawable(R.drawable.card1_2));
+                btnCard750.setBackground(getResources().getDrawable(R.drawable.card1_3));
+                btnCard1000.setBackground(getResources().getDrawable(R.drawable.card1_4));
             }
         });
 
         btnCard500.setOnClickListener(new View.OnClickListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onClick(View view) {
                 accountController.getTravelCard().setAmount(500);
-                btnCard250.setBackgroundColor(Color.LTGRAY);
-                btnCard500.setBackgroundColor(Color.GREEN);
-                btnCard750.setBackgroundColor(Color.LTGRAY);
-                btnCard1000.setBackgroundColor(Color.LTGRAY);
+                btnCard250.setBackground(getResources().getDrawable(R.drawable.card1_1));
+                btnCard500.setBackground(getResources().getDrawable(R.drawable.card1_2_sel));
+                btnCard750.setBackground(getResources().getDrawable(R.drawable.card1_3));
+                btnCard1000.setBackground(getResources().getDrawable(R.drawable.card1_4));
             }
         });
 
         btnCard750.setOnClickListener(new View.OnClickListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onClick(View view) {
                 accountController.getTravelCard().setAmount(750);
-                btnCard250.setBackgroundColor(Color.LTGRAY);
-                btnCard500.setBackgroundColor(Color.LTGRAY);
-                btnCard750.setBackgroundColor(Color.GREEN);
-                btnCard1000.setBackgroundColor(Color.LTGRAY);
+                btnCard250.setBackground(getResources().getDrawable(R.drawable.card1_1));
+                btnCard500.setBackground(getResources().getDrawable(R.drawable.card1_2));
+                btnCard750.setBackground(getResources().getDrawable(R.drawable.card1_3_sel));
+                btnCard1000.setBackground(getResources().getDrawable(R.drawable.card1_4));
             }
         });
 
         btnCard1000.setOnClickListener(new View.OnClickListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onClick(View view) {
                 accountController.getTravelCard().setAmount(1000);
-                btnCard250.setBackgroundColor(Color.LTGRAY);
-                btnCard500.setBackgroundColor(Color.LTGRAY);
-                btnCard750.setBackgroundColor(Color.LTGRAY);
-                btnCard1000.setBackgroundColor(Color.GREEN);
+                btnCard250.setBackground(getResources().getDrawable(R.drawable.card1_1));
+                btnCard500.setBackground(getResources().getDrawable(R.drawable.card1_2));
+                btnCard750.setBackground(getResources().getDrawable(R.drawable.card1_3));
+                btnCard1000.setBackground(getResources().getDrawable(R.drawable.card1_4_sel));
             }
         });
     }

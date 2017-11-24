@@ -2,6 +2,8 @@
     <!-- Home Screen -->
     <string name="home_title">Travel Ticketing System</string>
     <string name="home_note1">Choose a task you want</string>
+    <string name="btn_new_card">New Ticket</string>
+    <string name="btn_topup_card">Top up</string>
 
     <string name="app_name">Ticket Creator</string>
     <string name="personal_info">Personal Information</string>
@@ -42,7 +44,7 @@
     <string name="payment_complete">Successful Purchase!</string>
     <string name="button_finish">Finish</string>
     <string name="date">Date</string>
-    <string name="details">Details</string>
+    <string name="details">Name</string>
     <string name="transaction_number">Transaction Number</string>
     <string name="order_total">Order Total</string>
 

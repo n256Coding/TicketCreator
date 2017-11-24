@@ -110,5 +110,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtNicNo"
             app:layout_constraintVertical_bias="1.0"
+            android:background="@drawable/btn_next_style"
+            android:drawableRight="@drawable/ic_navigate_next_white_18dp"
             tools:layout_editor_absoluteX="1166dp" />
 </android.support.constraint.ConstraintLayout>

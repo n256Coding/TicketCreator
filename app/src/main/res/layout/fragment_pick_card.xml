@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background1_1"
     tools:context="com.csse.ticketcreator.Fragments.PickCardFragment">
 
     <android.support.constraint.ConstraintLayout
@@ -31,11 +32,11 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:background="@drawable/card1_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/btnCard500"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCard750"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCard750" />
 
         <ImageButton
             android:id="@+id/btnCard500"
@@ -51,7 +52,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/btnCard250"
             app:layout_constraintTop_toBottomOf="@+id/btnCard1000"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:background="@drawable/card1_2" />
 
         <ImageButton
             android:id="@+id/btnCard750"
@@ -67,7 +68,7 @@
             app:layout_constraintLeft_toRightOf="@+id/btnCard1000"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:background="@drawable/card1_3" />
 
         <ImageButton
             android:id="@+id/btnCard1000"
@@ -83,7 +84,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/btnCard750"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat = "@drawable/card1_4" />
     </android.support.constraint.ConstraintLayout>
 
     <TextView
@@ -111,8 +112,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="doStuff"
         android:text="@string/btn_next"
+        android:background="@drawable/btn_next_style"
+        android:drawableRight="@drawable/ic_navigate_next_white_18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -123,6 +125,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:text="@string/btn_back"
+        android:background="@drawable/btn_next_style"
+        android:drawableLeft="@drawable/ic_navigate_before_white_18dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnPickCardNext"
         app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

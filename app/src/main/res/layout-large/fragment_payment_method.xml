@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1_1"
     tools:context="com.csse.ticketcreator.Fragments.PaymentMethodFragment">
 
 
@@ -61,6 +62,8 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintVertical_bias="0.503"
         android:layout_marginRight="8dp"
+        android:background="@drawable/btn_next_style"
+        android:drawableRight="@drawable/ic_navigate_next_white_18dp"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
@@ -75,5 +78,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/btn_next_style"
+        android:drawableLeft="@drawable/ic_navigate_before_white_18dp"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 </android.support.constraint.ConstraintLayout>
