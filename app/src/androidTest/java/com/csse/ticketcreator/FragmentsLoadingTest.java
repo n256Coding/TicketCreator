@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
  * @author Nishan
  * @version 2.0
  */
-public class TestFragmentsLoading {
+public class FragmentsLoadingTest {
     private TestActivity testActivity;
 
     @Rule
