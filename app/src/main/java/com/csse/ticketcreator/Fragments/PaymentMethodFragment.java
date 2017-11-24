@@ -14,6 +14,7 @@ import android.widget.RadioButton;
 import com.csse.ticketcreator.Controllers.AccountController;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 import com.csse.ticketcreator.R;
+import com.csse.ticketcreator.TopupActivity;
 
 
 /**
@@ -74,7 +75,12 @@ public class PaymentMethodFragment extends Fragment {
         btnPaymentMethodBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nextClickListener.jumpToStep(2);
+                if(getActivity() instanceof TopupActivity){
+                    nextClickListener.jumpToStep(7);
+                }
+                else{
+                    nextClickListener.jumpToStep(2);
+                }
             }
         });
     }

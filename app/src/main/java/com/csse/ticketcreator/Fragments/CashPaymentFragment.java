@@ -1,6 +1,8 @@
 package com.csse.ticketcreator.Fragments;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,10 +15,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.csse.ticketcreator.Controllers.AccountController;
+import com.csse.ticketcreator.HomeActivity;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
+import com.csse.ticketcreator.Models.DBModel;
+import com.csse.ticketcreator.NewCardActivity;
 import com.csse.ticketcreator.R;
-
-import org.w3c.dom.Text;
+import com.csse.ticketcreator.TopupActivity;
+import com.google.zxing.integration.android.IntentResult;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,25 +57,61 @@ public class CashPaymentFragment extends Fragment {
         txtFullAmount = (TextView) getView().findViewById(R.id.txtFullAmount);
         accountController = AccountController.getInstance();
 
-        txtAmount.setText(String.valueOf(accountController.getAccount().getAmount()));
+        txtAmount.setText(String.valueOf(accountController.getTravelCard().getAmount()));
         txtServiceCharge.setText(String.valueOf(accountController.getCashServiceCharge()));
         txtFullAmount.setText(String.valueOf(accountController.getTotalCharge()));
 
         btnCashNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(accountController.makeAccount()){
-                    nextClickListener.jumpToStep(6);
-                }
-                else{
-                    Log.e(TAG, "Error saving data to firebase");
+                if(getActivity() instanceof NewCardActivity){
+                    if(accountController.makeTravelCard()){
+                        nextClickListener.jumpToStep(6);
+                    }
+                    else{
+                        Log.e(TAG, "Error saving data to firebase");
 
-                    new AlertDialog.Builder(getContext())
-                            .setTitle("Transaction Error")
-                            .setMessage("Transaction could not completed, Account not created.\nTry Again")
-                            .setCancelable(true)
-                            .setNeutralButton("OK", null)
-                            .show();
+                        new AlertDialog.Builder(getContext())
+                                .setTitle("Transaction Error")
+                                .setMessage("Transaction could not completed, Travel Card not created.\nTry Again")
+                                .setCancelable(true)
+                                .setNeutralButton("OK", null)
+                                .show();
+                    }
+                }
+                else if(getActivity() instanceof TopupActivity){
+                    TopupActivity topupActivity = (TopupActivity) getActivity();
+                    DBModel cardInfo = topupActivity.getTravelCardInfo();
+                    Double newAmount = cardInfo.getAmount() + accountController.getTravelCard().getAmount();
+
+                    if(accountController.updateTravelCard(cardInfo.getNIC(), newAmount)){
+                        new AlertDialog.Builder(getContext())
+                                .setTitle("Topup Successful")
+                                .setMessage("Topup completed successfully")
+                                .setCancelable(true)
+                                .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent(getContext(), HomeActivity.class);
+                                        startActivity(intent);
+                                    }
+                                })
+                                .show();
+                    }
+                    else{
+                        new AlertDialog.Builder(getContext())
+                                .setTitle("Transaction Error")
+                                .setMessage("Topup not compleated. Retry!")
+                                .setCancelable(true)
+                                .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent(getContext(), HomeActivity.class);
+                                        startActivity(intent);
+                                    }
+                                })
+                                .show();
+                    }
                 }
             }
         });

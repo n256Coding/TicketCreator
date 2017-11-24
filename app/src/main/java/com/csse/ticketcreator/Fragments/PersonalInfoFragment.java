@@ -13,17 +13,25 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.csse.ticketcreator.Controllers.UserController;
+import com.csse.ticketcreator.Helpers.ValidationHelper;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
 import com.csse.ticketcreator.Models.User;
 import com.csse.ticketcreator.R;
 
-
+/**
+ * This is a UI fragment which contains form to enter
+ * user information inorder to create travel card
+ *
+ * @author Nishan
+ * @version 3.2
+ */
 public class PersonalInfoFragment extends Fragment {
     Button btnPersonInfoNext;
     EditText txtFname, txtLname, txtContactNo, txtNicNo;
-
     OnNextClickListener nextClickListener;
     UserController userController;
+
+    //For use of android logger
     String TAG = "PersonalInfoFragment";
 
 
@@ -50,12 +58,6 @@ public class PersonalInfoFragment extends Fragment {
             txtLname = (EditText) getView().findViewById(R.id.txtLname);
             txtContactNo = (EditText) getView().findViewById(R.id.txtContactNo);
             txtNicNo = (EditText) getView().findViewById(R.id.txtNicNo);
-
-            txtFname.setError("Please enter your first name");
-            txtLname.setError("Please enter your last name");
-            txtContactNo.setError("Please enter your contact number");
-            txtNicNo.setError("Please enter your NIC number");
-
         } catch (ClassCastException ex) {
             Log.e(TAG, "Personal info fragment next button", ex);
         } catch (NullPointerException ex) {
@@ -71,17 +73,17 @@ public class PersonalInfoFragment extends Fragment {
                         txtNicNo.getText().toString().trim());
                 userController = UserController.getInstance();
 
-                if (userController.checkUserValidity(user)) {
+
+                if (ValidationHelper.validatePersonalInfo(txtFname, txtLname, txtContactNo, txtNicNo)
+                        && userController.checkUserValidity(user)) {
                     userController.setUser(user);
                     nextClickListener.jumpToStep(2);
-                }
-                else
-                {
+                } else {
                     new AlertDialog.Builder(getContext())
                             .setTitle("Incorrect user info")
                             .setMessage("Please enter correct user information")
                             .setCancelable(true)
-                            .setPositiveButton("OK", null)
+                            .setNeutralButton("OK", null)
                             .show();
                 }
             }

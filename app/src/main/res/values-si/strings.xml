@@ -6,8 +6,8 @@
 
     <string name="app_name">ටිකට්පත් සකසනය</string>
     <string name="personal_info">පුද්ගලික තොරතුරු</string>
-    <string name="fname">මුල් නම</string>
-    <string name="lname">අවසාන නම</string>
+    <string name="firstName">මුල් නම</string>
+    <string name="lastName">අවසාන නම</string>
     <string name="contactNo">දුරකථන අංකය</string>
     <string name="NIC">ජා.හැ. අංකය</string>
     <string name="select_travel_card">කාඩ්පතක් තෝරාගන්න</string>
@@ -26,7 +26,7 @@
     <string name="card_number">කාඩ්පත් අංකය</string>
     <string name="expiry">කල් ඉකුත්වීම</string>
     <string name="expiry_date_format">MM/YYYY</string>
-    <string name="ccv">CCV</string>
+    <string name="creditCardCcv">CCV</string>
 
     <!-- Pay with Cash -->
     <string name="pay_with_cash_title">මුදල් මගින් ගෙවීම</string>

@@ -8,8 +8,11 @@ import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
 /**
+ * This class is a helper class to generate QR Code for Travel Card ID
+ *
  * @author Nishan
  * @version 1.0
+ * @see QRGEncoder
  */
 
 public class QRGenerator {

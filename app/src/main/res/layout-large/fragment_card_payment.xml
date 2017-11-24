@@ -90,7 +90,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:hint="@string/ccv"
+        android:hint="@string/creditCardCcv"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/txtExpiryDate"

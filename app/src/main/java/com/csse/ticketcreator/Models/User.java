@@ -1,7 +1,8 @@
 package com.csse.ticketcreator.Models;
 
 /**
- * Created by Nishan on 11/11/2017.
+ * This class store information of user of system
+ *
  * @author Nishan
  * @version 2.0
  */

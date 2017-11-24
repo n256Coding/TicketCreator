@@ -1,7 +1,5 @@
 package com.csse.ticketcreator.Dummies;
 
-import com.csse.ticketcreator.Interfaces.NationalSystem;
-
 /**
  * @author Nishan
  * @version 1.0

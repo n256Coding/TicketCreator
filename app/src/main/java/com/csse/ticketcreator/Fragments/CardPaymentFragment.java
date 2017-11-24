@@ -1,5 +1,6 @@
 package com.csse.ticketcreator.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,10 +13,20 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.csse.ticketcreator.Controllers.AccountController;
+import com.csse.ticketcreator.Helpers.ValidationHelper;
 import com.csse.ticketcreator.Listeners.OnNextClickListener;
-import com.csse.ticketcreator.Models.Account;
+import com.csse.ticketcreator.Models.DBModel;
+import com.csse.ticketcreator.Models.TravelCard;
+import com.csse.ticketcreator.NewCardActivity;
 import com.csse.ticketcreator.R;
+import com.csse.ticketcreator.TopupActivity;
 
+/**
+ * This is a fragment contains form to fill credit card details.
+ *
+ * @author Nishan
+ * @version 2.3
+ */
 public class CardPaymentFragment extends Fragment {
     OnNextClickListener nextClickListener;
     AccountController accountController;
@@ -39,9 +50,9 @@ public class CardPaymentFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        try{
+        try {
             nextClickListener = (OnNextClickListener) getContext();
-        }catch (ClassCastException ex){
+        } catch (ClassCastException ex) {
             Log.e(TAG, "Unable to get context of activity", ex);
         }
 
@@ -56,21 +67,47 @@ public class CardPaymentFragment extends Fragment {
         btnCardNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = accountController.getAccount();
-                account.setCardHolderName(txtCardHolder.getText().toString().trim());
-                account.setCardNumber(txtCardNumber.getText().toString().trim());
-                account.setExpiryDate(txtExpiryDate.getText().toString().trim());
-                account.setCcv(txtCcv.getText().toString().trim());
+                TravelCard travelCard = accountController.getTravelCard();
+                travelCard.setCreditCardHolderName(txtCardHolder.getText().toString().trim());
+                travelCard.setCreditCardNumber(txtCardNumber.getText().toString().trim());
+                travelCard.setCreditCardExpiryDate(txtExpiryDate.getText().toString().trim());
+                travelCard.setCreditCardCcv(txtCcv.getText().toString().trim());
 
-                if (accountController.checkCardDetails(account.getCardHolderName(), account.getCardNumber(),
-                        account.getExpiryDate(), account.getCcv()).equals("success")) {
-                    accountController.setAccount(account);
-                    if(accountController.makeAccount()){
-                        //This is custom listener to communicate with main activity of this fragment
-                        nextClickListener.jumpToStep(6);
-                    }
+                if (!ValidationHelper.validateCardInfo(txtCardHolder, txtCardNumber, txtExpiryDate, txtCcv)) {
+                    return;
                 }
-                else{
+
+                if (accountController.verifyCreditCardForPayments(travelCard).equals("success")) {
+                    accountController.setTravelCardInformation(travelCard);
+
+                    //If fragment is in New card creation process, do this
+                    if(getActivity() instanceof NewCardActivity){
+                        if (accountController.makeTravelCard()) {
+                            //This is custom listener to communicate with main activity of this fragment
+                            nextClickListener.jumpToStep(6);
+                        }
+                    }
+                    //If fragment is in Top process, do this
+                    else if(getActivity() instanceof TopupActivity){
+                        TopupActivity activity = (TopupActivity) getActivity();
+                        DBModel travelCardInfo = activity.getTravelCardInfo();
+                        Double newAmount = travelCardInfo.getAmount() + accountController.getTravelCard().getAmount();
+                        if(accountController.updateTravelCard(travelCardInfo.getNIC(), newAmount)){
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle("Topup sccessfull")
+                                    .setMessage("topup is succesfully compleated")
+                                    .setCancelable(false)
+                                    .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            nextClickListener.jumpToStep(99);
+                                        }
+                                    })
+                                    .show();
+                        }
+                    }
+
+                } else {
                     new AlertDialog.Builder(getContext())
                             .setTitle("Invalid Credit Card Information")
                             .setMessage("Credit card details you entered are invalid, " +

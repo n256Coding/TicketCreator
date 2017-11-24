@@ -1,13 +1,16 @@
 package com.csse.ticketcreator.Models;
 
 /**
+ * This class represent travel card information.
+ * This is used to map java data into firebase database.
+ *
  * @author Nishan
  * @version 1.5
  */
 
 public class DBModel {
-    private String Fname;
-    private String Lname;
+    private String firstName;
+    private String lastName;
     private String ContactNo;
     private String NIC;
     private double Amount;
@@ -15,20 +18,20 @@ public class DBModel {
     private String LoanFlag = "false";
     private String RideFlag = "false";
 
-    public String getFname() {
-        return Fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.Fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLname() {
-        return Lname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLname(String lname) {
-        this.Lname = lname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getContactNo() {

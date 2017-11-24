@@ -5,8 +5,8 @@
 
     <string name="app_name">Ticket Creator</string>
     <string name="personal_info">Personal Information</string>
-    <string name="fname">First Name</string>
-    <string name="lname">Last Name</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
     <string name="contactNo">Contact Number</string>
     <string name="NIC">NIC Number</string>
     <string name="select_travel_card">Pick a travel card</string>
@@ -25,7 +25,7 @@
     <string name="card_number">Card Number</string>
     <string name="expiry">Expiry</string>
     <string name="expiry_date_format">MM/YYYY</string>
-    <string name="ccv">CCV</string>
+    <string name="creditCardCcv">CCV</string>
 
     <!-- Pay with Cash -->
     <string name="pay_with_cash_title">Pay with Cash</string>
@@ -45,5 +45,16 @@
     <string name="details">Details</string>
     <string name="transaction_number">Transaction Number</string>
     <string name="order_total">Order Total</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Topup Values Fragment -->
+    <string-array name="topupSpinner">
+        <item>1000</item>
+        <item>750</item>
+        <item>500</item>
+        <item>250</item>
+    </string-array>
 
 </resources>
