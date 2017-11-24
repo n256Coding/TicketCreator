@@ -1,0 +1,148 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1_1"
+    tools:context="com.csse.ticketcreator.Fragments.SuccesfullPaymentFragment">
+
+
+    <ImageView
+        android:id="@+id/imgSuccessMessage"
+        android:layout_width="1262dp"
+        android:layout_height="21dp"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgQrCode"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSuccesfullMessage"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+    <TextView
+        android:id="@+id/txtSuccesfullMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/payment_complete"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSuccessMessage" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/date"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSuccesfullMessage" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/details"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/transaction_number"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/order_total"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/txtTransactionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
+        app:layout_constraintRight_toLeftOf="@+id/imgQrCode"
+        android:layout_marginRight="50dp" />
+
+    <TextView
+        android:id="@+id/txtTransactionDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView20"
+        app:layout_constraintRight_toRightOf="@+id/txtTransactionDate" />
+
+    <TextView
+        android:id="@+id/txtTransactionNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView21"
+        app:layout_constraintRight_toRightOf="@+id/txtTransactionDetails" />
+
+    <TextView
+        android:id="@+id/txtOrderTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView22"
+        app:layout_constraintRight_toRightOf="@+id/txtTransactionNumber" />
+
+    <Button
+        android:id="@+id/btnPaymentFinish"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_finish"
+        android:background="@drawable/btn_next_style"
+        android:drawableRight="@drawable/ic_navigate_next_white_18dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrderTotal" />
+</android.support.constraint.ConstraintLayout>
