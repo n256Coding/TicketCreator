@@ -16,6 +16,12 @@ import com.csse.ticketcreator.Models.TravelCard;
 import com.csse.ticketcreator.R;
 import com.csse.ticketcreator.TopupActivity;
 
+/**
+ * This is the activity to show topup amount
+ *
+ * @author Sampath
+ * @version 1.0
+ */
 public class ReferenceNoRequestFragment extends Fragment {
     Button btnTopupValueNext;
     Spinner spinnerTopUpAmount;

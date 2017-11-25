@@ -1,27 +1,71 @@
 {
   "project_info": {
-    "project_number": "871309660130",
-    "firebase_url": "https://ticket-creator.firebaseio.com",
-    "project_id": "ticket-creator",
-    "storage_bucket": "ticket-creator.appspot.com"
+    "project_number": "152831437987",
+    "firebase_url": "https://ticketsystem-6e8e7.firebaseio.com",
+    "project_id": "ticketsystem-6e8e7",
+    "storage_bucket": "ticketsystem-6e8e7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:871309660130:android:4b093ffd1121456c",
+        "mobilesdk_app_id": "1:152831437987:android:53c484ad210a039b",
+        "android_client_info": {
+          "package_name": "com.sliit.csse.ticketscanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152831437987-2kgstlpkgfvtoita63ui1bgc5rmmkirk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sliit.csse.ticketscanner",
+            "certificate_hash": "58ba3ca2d6ffca6f032f5ef91a777f7dbb23ed63"
+          }
+        },
+        {
+          "client_id": "152831437987-685ri8kllrskniskbqcepk358p5rku7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwZBYDMp38SWrxUAvoCqjC_1emcy5M1p4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152831437987-685ri8kllrskniskbqcepk358p5rku7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152831437987:android:4b093ffd1121456c",
         "android_client_info": {
           "package_name": "com.csse.ticketcreator"
         }
       },
       "oauth_client": [
         {
-          "client_id": "871309660130-7rk5i57vrs3h42fa31s139dn54mh4ciq.apps.googleusercontent.com",
+          "client_id": "152831437987-685ri8kllrskniskbqcepk358p5rku7h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAKbrBiMstvxMAA4_gmW2NCEO5NpAiFyAs"
+          "current_key": "AIzaSyAwZBYDMp38SWrxUAvoCqjC_1emcy5M1p4"
         }
       ],
       "services": {
